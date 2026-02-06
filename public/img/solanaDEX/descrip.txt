@@ -1,0 +1,3 @@
+The DEX Trading Platform with Social Sentiment Integration optimizes trading on the Solana blockchain using Solana's Rust-based framework. It automates wallet creation, integrates real-time token data from Pump.fun, and provides features like auto trading, one-click buy/sell, and copy trading.
+
+With API development using RESTful API, the platform supports real-time execution with MongoDB for user data management. This blockchain-based solution empowers users to make efficient crypto trades using Solana and other tools.

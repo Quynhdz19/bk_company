@@ -1,0 +1,1 @@
+Swisscheese is the home to multi-chain tokenized stocks. The platform supports all EVM chains. The development process took a couple months as it required multiple smart contracts for the tokenization of the stocks on multiple blockchains. The platform is fully decentralized.

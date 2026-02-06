@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,11 +24,26 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsError(false);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company,
+          service: formData.service,
+          message: formData.message,
+          email: formData.email, // Email field for template
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
       setSubmitMessage('Thank you! We will get back to you soon.');
-      setIsSubmitting(false);
       setFormData({
         name: '',
         email: '',
@@ -36,7 +53,14 @@ const Contact = () => {
       });
       
       setTimeout(() => setSubmitMessage(''), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setIsError(true);
+      setSubmitMessage('Failed to send message. Please try again or contact us directly.');
+      setTimeout(() => setSubmitMessage(''), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -67,8 +91,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      content: '+84338691729',
+      link: 'tel:+84338691729',
     },
     {
       icon: (
@@ -88,7 +112,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Office',
-      content: 'San Francisco, CA',
+      content: 'Ha Noi, Vietnam',
       link: '#',
     },
   ];
@@ -248,7 +272,11 @@ const Contact = () => {
               </button>
 
               {submitMessage && (
-                <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
+                <div className={`p-4 rounded-lg text-center ${
+                  isError 
+                    ? 'bg-red-100 border border-red-400 text-red-700' 
+                    : 'bg-green-100 border border-green-400 text-green-700'
+                }`}>
                   {submitMessage}
                 </div>
               )}

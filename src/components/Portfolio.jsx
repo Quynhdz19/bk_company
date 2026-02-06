@@ -3,6 +3,7 @@ import { useState } from 'react';
 const Portfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const categories = [
     { id: 'all', name: 'All Projects' },
@@ -12,107 +13,127 @@ const Portfolio = () => {
   ];
 
   const projects = [
-    // Blockchain Projects
+    // Web App Projects
     {
       id: 1,
-      title: 'Fizen Super App',
-      category: 'blockchain',
-      description: 'Comprehensive cryptocurrency card platform enabling users to pay, travel, send money across borders, and manage crypto seamlessly with secure pool-based funding architecture.',
-      image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop',
+      title: 'Gaming ERP SaaS Platform',
+      category: 'webapp',
+      description: 'Comprehensive ERP SaaS platform for managing gaming facilities, machines, events, subscriptions, and business intelligence across thousands of locations.',
+      image: '/img/webapp/image_original1.png',
+      images: [
+        '/img/webapp/image_original1.png',
+        '/img/webapp/image_original2.png',
+        '/img/webapp/image_original3.png',
+        '/img/webapp/image_original4.png'
+      ],
       video: null,
-      technologies: ['NestJS', 'Rust', 'Solana', 'MongoDB', 'Redis', 'BullMQ'],
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Payment Integration', 'Mobile SDK'],
       link: '#',
       details: {
-        fullDescription: 'Fizen helps users pay like a local, travel smoothly, send money across borders, and manage their crypto - all in one simple app. Built with secure pool-based funding system using Rust smart contracts on Solana.',
+        fullDescription: 'Enterprise-grade ERP SaaS platform designed to manage gaming facilities at scale. The platform provides comprehensive management tools for game machines, events, subscriptions, and financial operations across thousands of facilities and owners.',
         highlights: [
-          'Secure pool-based funding system using Rust smart contracts on Solana',
-          'Real-time transaction processing with comprehensive error handling',
-          'Multi-currency balance management supporting USDT, USDC with automatic USD conversion',
-          'Monthly maintenance fee system with debt tracking and automatic settlement',
-          'Robust double-spending prevention using atomic database transactions'
+          'Manage game machines across thousands of facilities and multiple owners',
+          'Create and manage game events, leaderboards, and parties',
+          'Gaming subscription and payment management system',
+          'Integration with mobile apps and wallet pass',
+          'Financial status tracking and reporting for facilities',
+          'Business intelligence dashboard with real-time analytics',
+          'Multi-tenant architecture supporting multiple organizations'
         ]
       }
     },
+    // Blockchain Projects
     {
       id: 2,
-      title: 'Dex3.ai',
+      title: 'Solana DEX Trading Platform',
       category: 'blockchain',
-      description: 'Next-generation DEX focused on meme coin trading on Solana. Combines AI-driven analytics with trader-centric design for smarter trading decisions.',
-      image: 'https://images.unsplash.com/photo-1621416894569-0f39ed31d247?w=800&h=600&fit=crop',
+      description: 'Advanced DEX Trading Platform with Social Sentiment Integration on Solana blockchain, featuring automated trading, real-time token data, and copy trading capabilities.',
+      image: '/img/solanaDEX/image_original1.png',
+      images: [
+        '/img/solanaDEX/image_original1.png',
+        '/img/solanaDEX/image_original2.png',
+        '/img/solanaDEX/image_original3.png',
+        '/img/solanaDEX/image_original4.png'
+      ],
       video: null,
-      technologies: ['Rust', 'Anchor', 'Go', 'NestJS', 'PostgreSQL', 'Kafka', 'Redis'],
+      technologies: ['Rust', 'Solana', 'MongoDB', 'RESTful API', 'Pump.fun API', 'Auto Trading'],
       link: '#',
       details: {
-        fullDescription: 'dex3.ai is a next-generation decentralized exchange (DEX) focused on enhancing meme coin trading on the Solana blockchain. Combines AI-driven analytics with a trader-centric design to provide tools for smarter trading decisions.',
+        fullDescription: 'The DEX Trading Platform with Social Sentiment Integration optimizes trading on the Solana blockchain using Solana\'s Rust-based framework. It automates wallet creation, integrates real-time token data from Pump.fun, and provides features like auto trading, one-click buy/sell, and copy trading. With API development using RESTful API, the platform supports real-time execution with MongoDB for user data management. This blockchain-based solution empowers users to make efficient crypto trades using Solana and other tools.',
         highlights: [
-          'Trading programs for multiple DEXes using Rust and Anchor framework',
-          'Reduced transaction confirmation time from 3 seconds to under 1 second',
-          'Sub-1 second copy and snipe execution times',
-          'Fast and reliable trigger-based limit orders and trailing stop mechanisms',
-          'Top Wallet feature tracking all buy/sell activities across Solana network'
+          'Built on Solana blockchain using Rust-based framework for high performance',
+          'Automated wallet creation and management system',
+          'Real-time token data integration from Pump.fun',
+          'Advanced features: Auto trading, one-click buy/sell, copy trading',
+          'RESTful API development for seamless platform integration',
+          'MongoDB integration for efficient user data management',
+          'Social sentiment analysis for informed trading decisions'
         ]
       }
     },
     {
       id: 3,
-      title: 'Blocklens Analytics',
+      title: 'Bitcoin Price Prediction Game',
       category: 'blockchain',
-      description: 'On-chain data analytics platform allowing users to query human-readable blockchain data and generate dashboards for DeFi, NFT, and platform performance metrics.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      description: 'Blockchain-based prediction game built on Base Chain where players compete by predicting Bitcoin price movements in real-time.',
+      image: '/img/Bitcoin/image_original1.png',
+      images: [
+        '/img/Bitcoin/image_original1.png',
+        '/img/Bitcoin/image_original2.png',
+        '/img/Bitcoin/image_original3.png',
+        '/img/Bitcoin/image_original4.png',
+        '/img/Bitcoin/image_original5.png',
+        '/img/Bitcoin/image_original6.png',
+        '/img/Bitcoin/image_original7.png',
+        '/img/Bitcoin/image_original9.png',
+        '/img/Bitcoin/image_original10.png'
+      ],
       video: null,
-      technologies: ['NestJS', 'MongoDB', 'PostgreSQL', 'Redis', 'Kafka'],
+      technologies: ['Base Chain', 'Smart Contracts', 'Web3', 'React', 'Bitcoin Price Oracle'],
       link: '#',
       details: {
-        fullDescription: 'Blocklens is a data analyzing platform that allows users to query human-readable on-chain data, generate dashboards for DeFi, NFT, platform performance as well as provide advanced APIs.',
+        fullDescription: 'Bitcoin blockchain based game built on Base Chain. Compete against players by choosing if Bitcoin will go up or down. This innovative prediction game leverages blockchain technology to create a transparent, fair, and exciting gaming experience where players can test their market prediction skills.',
         highlights: [
-          'Insights module in microservices system aggregating real-time on-chain data',
-          'Database schema and APIs for dashboard based on aggregated blockchain data',
-          'Migrated communication from HTTP to Kafka for better scalability',
-          'Real-time data processing from latest blocks on-chain'
+          'Built on Base Chain for fast and low-cost transactions',
+          'Real-time Bitcoin price integration',
+          'Compete against other players in prediction rounds',
+          'Transparent and verifiable on-chain results',
+          'Smart contract-based reward distribution',
+          'User-friendly interface for seamless gaming experience',
+          'Secure wallet integration for crypto payments'
         ]
       }
     },
     {
       id: 4,
-      title: 'Lagom AMM',
+      title: 'Swisscheese - Multi-Chain Tokenized Stocks',
       category: 'blockchain',
-      description: 'Automated market maker supporting services for users to earn interest or transact using cryptocurrencies on EVM platforms.',
-      image: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=800&h=600&fit=crop',
+      description: 'Revolutionary platform for trading tokenized stocks across multiple blockchains. Fully decentralized with support for all EVM chains.',
+      image: '/img/Swisscheese/image_original.png',
+      images: [
+        '/img/Swisscheese/image_original.png',
+        '/img/Swisscheese/image_original2.png',
+        '/img/Swisscheese/image_original3.png'
+      ],
       video: null,
-      technologies: ['NestJS', 'Java/Spring Boot', 'MongoDB', 'PostgreSQL', 'Redis', 'Kafka', 'Websocket'],
+      technologies: ['Solidity', 'EVM', 'Multi-Chain', 'Smart Contracts', 'DeFi', 'Tokenization'],
       link: '#',
       details: {
-        fullDescription: 'Lagom creates an automated market maker, supports services for users to earn interest or transact using cryptocurrencies. Supports EVM networks with pairs like ETH/USDT, BTC/USDT, BNB/USDT.',
+        fullDescription: 'Swisscheese is the home to multi-chain tokenized stocks. The platform supports all EVM chains. The development process took a couple months as it required multiple smart contracts for the tokenization of the stocks on multiple blockchains. The platform is fully decentralized.',
         highlights: [
-          'Trading bot based on real-time price fluctuations',
-          'Redis-based configuration system eliminating server restarts',
-          'Detailed server logs sent to Telegram for production monitoring',
-          'Optimized database design and code refactoring'
-        ]
-      }
-    },
-    {
-      id: 5,
-      title: 'Avabot Trading Bot',
-      category: 'blockchain',
-      description: 'Telegram trading bot that automatically buys and sells tokens on supported chains as soon as liquidity is added and trade is enabled.',
-      image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=600&fit=crop',
-      video: null,
-      technologies: ['NestJS', 'Rust', 'Solidity', 'MongoDB', 'Redis', 'Kafka', 'Telegram API'],
-      link: '#',
-      details: {
-        fullDescription: 'Avabot is a telegram trading bot that helps users to automatically buy and sell tokens on supported chains as soon as liquidity is added and trade is enabled.',
-        highlights: [
-          'Scanner module scanning tokens from Telegram channels of famous KOLs',
-          'Token property analysis using Telegram bot',
-          'Token simulation using Hardhat for property extraction',
-          'Comment module for simulated token properties on Pinksale platform'
+          'Multi-chain support across all EVM-compatible blockchains',
+          'Tokenization of traditional stocks on blockchain',
+          'Fully decentralized platform architecture',
+          'Multiple smart contracts for cross-chain functionality',
+          'Secure and transparent stock trading',
+          'Fractional ownership of tokenized stocks',
+          'Interoperability between different blockchain networks'
         ]
       }
     },
     // Web App Projects
     {
-      id: 6,
+      id: 5,
       title: 'E-Commerce Platform',
       category: 'webapp',
       description: 'Full-featured online marketplace with payment integration, inventory management, and real-time order tracking.',
@@ -131,7 +152,7 @@ const Portfolio = () => {
       }
     },
     {
-      id: 7,
+      id: 6,
       title: 'Healthcare Management System',
       category: 'webapp',
       description: 'Comprehensive patient management system with appointment scheduling, medical records, and telemedicine capabilities.',
@@ -150,7 +171,7 @@ const Portfolio = () => {
       }
     },
     {
-      id: 8,
+      id: 7,
       title: 'Real Estate Portal',
       category: 'webapp',
       description: 'Property listing platform with virtual tours, advanced search, and mortgage calculator features.',
@@ -170,7 +191,7 @@ const Portfolio = () => {
     },
     // Mobile App Projects
     {
-      id: 9,
+      id: 8,
       title: 'Fitness Tracking App',
       category: 'mobile',
       description: 'Comprehensive mobile app for tracking workouts, nutrition, sleep, and overall health metrics with AI-powered insights.',
@@ -189,7 +210,7 @@ const Portfolio = () => {
       }
     },
     {
-      id: 10,
+      id: 9,
       title: 'Crypto Wallet App',
       category: 'mobile',
       description: 'Secure mobile cryptocurrency wallet with multi-chain support, DeFi integration, and biometric authentication.',
@@ -250,7 +271,10 @@ const Portfolio = () => {
             <div
               key={project.id}
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-              onClick={() => setSelectedProject(project)}
+              onClick={() => {
+                setSelectedProject(project);
+                setCurrentImageIndex(0);
+              }}
             >
               {/* Project Image/Video */}
               <div className="relative h-64 overflow-hidden bg-gray-200">
@@ -288,7 +312,7 @@ const Portfolio = () => {
                   {project.technologies.slice(0, 3).map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-blue-100 text-black rounded-full text-xs font-medium"
+                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -361,22 +385,115 @@ const Portfolio = () => {
 
             {/* Modal Content */}
             <div className="p-6">
-              {/* Project Media */}
-              <div className="mb-6 rounded-xl overflow-hidden">
+              {/* Project Media Gallery */}
+              <div className="mb-6">
                 {selectedProject.video ? (
-                  <video
-                    src={selectedProject.video}
-                    className="w-full"
-                    controls
-                    autoPlay
-                    loop
-                  />
+                  <div className="rounded-xl overflow-hidden">
+                    <video
+                      src={selectedProject.video}
+                      className="w-full"
+                      controls
+                      autoPlay
+                      loop
+                    />
+                  </div>
+                ) : selectedProject.images && selectedProject.images.length > 1 ? (
+                  // Multiple Images - Gallery with Navigation
+                  <div className="relative">
+                    <div className="rounded-xl overflow-hidden bg-gray-100">
+                      <img
+                        src={selectedProject.images[currentImageIndex]}
+                        alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                        className="w-full h-[400px] object-contain"
+                      />
+                    </div>
+                    
+                    {/* Navigation Arrows */}
+                    {selectedProject.images.length > 1 && (
+                      <>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) => 
+                              prev === 0 ? selectedProject.images.length - 1 : prev - 1
+                            );
+                          }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/70 hover:bg-black text-white rounded-full flex items-center justify-center transition-all"
+                        >
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setCurrentImageIndex((prev) => 
+                              prev === selectedProject.images.length - 1 ? 0 : prev + 1
+                            );
+                          }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/70 hover:bg-black text-white rounded-full flex items-center justify-center transition-all"
+                        >
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </button>
+                      </>
+                    )}
+                    
+                    {/* Image Counter & Dots */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+                      <div className="bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                        {currentImageIndex + 1} / {selectedProject.images.length}
+                      </div>
+                      <div className="flex gap-2">
+                        {selectedProject.images.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setCurrentImageIndex(idx);
+                            }}
+                            className={`h-2 rounded-full transition-all ${
+                              idx === currentImageIndex ? 'w-8 bg-white' : 'w-2 bg-white/50'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ) : (
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full"
-                  />
+                  // Single Image
+                  <div className="rounded-xl overflow-hidden">
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full"
+                    />
+                  </div>
+                )}
+                
+                {/* Thumbnail Gallery for multiple images */}
+                {selectedProject.images && selectedProject.images.length > 1 && (
+                  <div className="grid grid-cols-4 md:grid-cols-6 gap-2 mt-4">
+                    {selectedProject.images.map((img, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setCurrentImageIndex(idx);
+                        }}
+                        className={`rounded-lg overflow-hidden border-2 transition-all ${
+                          idx === currentImageIndex ? 'border-black' : 'border-transparent hover:border-gray-400'
+                        }`}
+                      >
+                        <img
+                          src={img}
+                          alt={`Thumbnail ${idx + 1}`}
+                          className="w-full h-16 object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
 
@@ -422,7 +539,7 @@ const Portfolio = () => {
                   {selectedProject.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-4 py-2 bg-blue-100 text-black rounded-lg font-medium"
+                      className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium"
                     >
                       {tech}
                     </span>

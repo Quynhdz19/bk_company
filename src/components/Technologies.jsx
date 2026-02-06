@@ -150,12 +150,7 @@ const Technologies = () => {
           <p className="text-gray-700 text-lg mb-6">
             Always exploring and adopting new technologies to stay ahead of the curve
           </p>
-          <a
-            href="#contact"
-            className="inline-block bg-black text-gray-900 px-8 py-4 rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105"
-          >
-            Discuss Your Tech Stack
-          </a>
+        
         </div>
       </div>
     </section>

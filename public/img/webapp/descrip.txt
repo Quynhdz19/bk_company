@@ -1,0 +1,8 @@
+The project is to create an ERP SAAP platform that can manage gaming facilities We can do things like:
+- Manage Game Machines across a thousand facilities and owners.
+- Manage and create game events, leaderboards, and parties.
+- Manage the gaming subscription and payment.
+- Integration with mobile and wallet pass.
+- Manage the finance status of facilities.
+- Dashboard of business intelligence.
+- And many more.

@@ -1,0 +1,1 @@
+Bitcoin blockchain based game built on Base Chain. Compete agains't players by choosing if bitcoin will go up or down.
